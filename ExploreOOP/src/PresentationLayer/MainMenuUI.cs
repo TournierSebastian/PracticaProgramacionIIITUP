@@ -36,7 +36,7 @@ namespace ExploreOOP.src.PresentationLayer
 
                         foreach (var item in lista)
                         {
-                            Console.WriteLine($"Account ID: {item.Number} {item.Owner} Balance {item.Balance}" );
+                            Console.WriteLine($"Account id {item.Number} {item.Owner} Balance {item.Balance}" );
                         }
 
                         PrintPressToContinue();
@@ -56,7 +56,12 @@ namespace ExploreOOP.src.PresentationLayer
 
                         break;
 
+                    case 3:
+                        Console.WriteLine("Ingrese el numero de cuenta a eliminar");
+                        var id = int.Parse(Console.ReadLine() ?? "");
+                        lineOfCreditAccountService.Delete(id);
 
+                        break;
                 }
 
             } while (option != 0);
@@ -74,6 +79,8 @@ namespace ExploreOOP.src.PresentationLayer
             Console.WriteLine("     1 - List all Line of credit accounts");
             Console.WriteLine("");
             Console.WriteLine("     2 - Add a Line of credit account");
+            Console.WriteLine("");
+            Console.WriteLine("     3 - Delete a Line of credit account");
             Console.WriteLine("");
             Console.WriteLine("     0 - Exit program");
             Console.WriteLine("");

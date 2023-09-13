@@ -25,12 +25,14 @@ namespace PersistenceLayer
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            
+
+            s_List.RemoveAt(id);
         }
 
         public LineOfCreditAccount Get(int id)
         {
-            throw new NotImplementedException();
+            return s_List[id];
         }
 
         public List<LineOfCreditAccount> GetAll()
